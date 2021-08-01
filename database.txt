@@ -1,0 +1,27 @@
+CREATE DATABASE Kalbe;
+GO
+
+USE Kalbe;
+GO
+
+CREATE TABLE Kalbe.dbo.Customer (
+	CustID varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	CustName varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Address varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT Customer_PK PRIMARY KEY (CustID)
+);
+GO
+
+CREATE TABLE Kalbe.dbo.Invoice (
+	InvId varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	Customer varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ItemId varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	QtyItem int NULL,
+	ItemPrice numeric(38,0) NULL,
+	SubPrice numeric(38,0) NULL,
+	Discount numeric(38,0) NULL,
+	TotPrice numeric(38,0) NULL,
+	DiscPer int NULL,
+	CONSTRAINT Invoice_PK PRIMARY KEY (InvId)
+);
+GO
